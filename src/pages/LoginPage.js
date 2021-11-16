@@ -1,40 +1,58 @@
+//contains functions and locators for Login Page
+
 class LoginPage {
 
+    //setters
     enterEmail(email) {
         $('#identifierId').setValue(email)
-    }
-
-    clickIdentifierNextButton() {
-        $('#identifierNext > div > button').click()
     }
 
     enterPassword(password) {
         $('#password > div > div > div > input').setValue(password)
     }
 
+    //next buttons
+    clickIdentifierNextButton() {
+        $('#identifierNext > div > button').click()
+    }
+
     clickPasswordNextButton() {
         $('#passwordNext > div > button').click()
     }
 
+    //error message for email entries
     getEmailValidationMessage() {
         var validation = 
-        // $('//*[@id="view_container"]/div/div/div[2]/div/div[1]/div/form/span/section/div/div/div[1]/div/div[2]/div[2]/div').getText()
         $('div.dEOOab.RxsGPe > div').getText()
         return validation
     }
 
+    //error message for password entries
     getPasswordValidationMessage() {
         var validation = 
-        // $('//*[@id="view_container"]/div/div/div[2]/div/div[1]/div/form/span/section/div/div/div[1]/div[2]/div[2]/span').getText()
         $('div.OyEIQ.uSvLId > div:nth-child(2) > span').getText()
         return validation
     }
 
+    //header
+    getHeadingText() {
+        browser.pause(1000);
+        var headingText = $('#headingText > span').getText()
+        return headingText
+    }
+
+    //Text for signin option for when there's a previous login
+    getAccountSignInValidation() {
+        var validation = $('div.w1I7fb').getText()
+        return validation
+    }
+
+    //links
     clickCreateAccount() {
         $('div.daaWTb > div > div > div:nth-child(1) > div > button').click()
     }
 
-    clickFormyself() {
+    clickForMyself() {
         $('div.daaWTb > div > div > div:nth-child(2) > div > ul > li:nth-child(2)').click()
     }
 
@@ -44,17 +62,6 @@ class LoginPage {
 
     clickLearnMore() {
         $('div.PrDSKc > a').click()
-    }
-
-    getHeadingText() {
-        browser.pause(1000);
-        var headingText = $('#headingText > span').getText()
-        return headingText
-    }
-
-    getAccountSignInValidation() {
-        var validation = $('div.w1I7fb').getText()
-        return validation
     }
 
 }

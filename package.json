@@ -17,12 +17,14 @@
   },
   "devDependencies": {
     "@types/webdriverio": "^5.0.0",
+    "@wdio/allure-reporter": "^7.16.8",
     "@wdio/local-runner": "^7.5.7",
     "@wdio/mocha-framework": "^7.5.3",
     "@wdio/selenium-standalone-service": "^7.5.7",
     "@wdio/spec-reporter": "^7.5.7",
     "chai": "^4.3.4",
     "chai-webdriverio": "^1.0.0",
-    "fibers": "^5.0.0"
+    "fibers": "^5.0.0",
+    "allure-commandline": "^2.13.8"
   }
 }
